@@ -110,6 +110,8 @@ function result() {
   console.log("Tip: ", tipValueContainer);
   console.log("People: ", peopleValueContainer);
 
+  reset.disabled = false;
+
   if (tipValueContainer !== 0 && billValueContainer == 0) {
     tipAmount.textContent = "$0.00";
     totalAmount.textContent = "$0.00";
@@ -124,9 +126,6 @@ function result() {
     let perPerson = billValueContainer / peopleValueContainer;
     let tip = (perPerson * tipValueContainer) / 100;
     let total = billValueContainer / peopleValueContainer + tip;
-
-    console.log(tip);
-    console.log(perPerson);
 
     if (tip == Infinity && total == Infinity) {
       tipAmount.textContent = "$0.00";
@@ -143,6 +142,7 @@ function resetValue() {
   billValueContainer = 0;
   peopleValueContainer = 0;
   tipValueContainer = 0;
+  reset.disabled = true;
 
   bill.value = "";
   for (let button of radioButtons) {

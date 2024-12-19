@@ -215,6 +215,11 @@ body {
   cursor: pointer;
 }
 
+.result__reset:disabled {
+  background: #0d686d;
+  counter-reset: #035c62;
+}
+
 .attribution {
   color: hsl(183, 100%, 15%);
   margin: 10px 0;
@@ -225,6 +230,9 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
+  body {
+    padding: 70px 0 160px;
+  }
   .header {
     height: 200px;
   }
@@ -239,11 +247,14 @@ body {
     padding: 10px;
     flex-basis: 50%;
     width: 100%;
-    gap: 10%;
+    gap: 30px;
   }
   .input__radio {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+  }
+  .input__radio-label {
+    height: 25px;
   }
   .input__custom-tip {
     width: 100%;
@@ -271,10 +282,7 @@ body {
     font-size: 2.5rem;
   }
 }
-@media only screen and (min-width: 1024px) {
-  body {
-    padding: 50px 0 150px;
-  }
+@media only screen and (min-width: 1440px) {
   .card {
     width: 900px;
     height: 450px;

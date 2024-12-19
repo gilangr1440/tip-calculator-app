@@ -226,6 +226,11 @@ body {
           color: $very-dark-cyan;
           cursor: pointer;
         }
+
+        @at-root .result__reset:disabled {
+          background: #0d686d;
+          counter-reset: #035c62;
+        }
       }
     }
   }
@@ -243,6 +248,8 @@ body {
 
 @media only screen and (min-width: 1024px) {
   body {
+    padding: 70px 0 160px;
+
     @at-root .header {
       height: 200px;
     }
@@ -258,12 +265,16 @@ body {
         padding: 10px;
         flex-basis: 50%;
         width: 100%;
-        gap: 10%;
+        gap: 30px;
 
         @at-root .input__cont {
           @at-root .input__radio {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
+
+            @at-root .input__radio-label {
+              height: 25px;
+            }
 
             @at-root .input__custom-tip {
               width: 100%;
@@ -300,10 +311,8 @@ body {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1440px) {
   body {
-    padding: 50px 0 150px;
-
     @at-root .card {
       width: 900px;
       height: 450px;
