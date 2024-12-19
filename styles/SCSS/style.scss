@@ -1,0 +1,332 @@
+$strong-cyan: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+* {
+  font-family: "Space Mono", monospace;
+}
+
+body {
+  max-width: 100vw;
+  background: $light-grayish-cyan;
+
+  @at-root .header {
+    width: 100%;
+    height: 150px;
+
+    @at-root .header__title {
+      display: grid;
+      grid-template-columns: repeat(4, 1.5rem);
+      grid-template-rows: repeat(2, 1.5rem);
+      row-gap: 0.5rem;
+      justify-content: center;
+      align-content: center;
+      color: $very-dark-cyan;
+      font-weight: 700;
+      font-family: "Space Mono", monospace;
+      font-size: 1.5rem;
+      height: 100%;
+
+      span {
+        text-align: center;
+      }
+    }
+  }
+
+  @at-root .card {
+    background: $white;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 20px 20px 0 0;
+    gap: 30px;
+
+    @at-root .input {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+
+      @at-root .input__cont {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @at-root .input__error-cont {
+          display: flex;
+          justify-content: space-between;
+
+          @at-root .input__label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $very-dark-cyan;
+          }
+
+          @at-root .input__error-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #ef5350;
+            display: none;
+
+            @at-root .input__error-text.error {
+              display: block;
+            }
+          }
+        }
+
+        @at-root .input__field {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          padding: 5px 20px;
+          background: $very-light-grayish-cyan;
+          border-radius: 5px;
+          border: 2px solid transparent;
+
+          @at-root .input__field:has(> .input__value:focus) {
+            border: 2px solid $strong-cyan;
+          }
+
+          @at-root .input__field.error {
+            border: 2px solid #ef5350;
+          }
+
+          @at-root .input__icon {
+            width: 1rem;
+          }
+
+          @at-root .input__value {
+            flex-grow: 1;
+            text-align: end;
+            font-size: 1.5rem;
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: $very-dark-cyan;
+            font-weight: 600;
+
+            @at-root .input__value:focus {
+              outline: none;
+            }
+
+            @at-root .input__value::placeholder {
+              color: $grayish-cyan;
+              font-weight: 600;
+            }
+          }
+        }
+
+        @at-root .input__radio {
+          display: grid;
+          grid-template-columns: repeat(2, calc(50% - calc(15px / 2)));
+          grid-template-rows: repeat(3, 1fr);
+          gap: 15px;
+
+          @at-root .input__radio-label {
+            background: $very-dark-cyan;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $very-light-grayish-cyan;
+            border-radius: 5px;
+
+            @at-root .input__radio-label:hover {
+              background: lighten($color: $strong-cyan, $amount: 30%);
+              color: $very-dark-cyan;
+              cursor: pointer;
+            }
+          }
+
+          @at-root .input__radio-button {
+            display: none;
+          }
+
+          @at-root .input__radio-label:has(+ .input__radio-button:checked) {
+            background: $strong-cyan;
+          }
+
+          @at-root .input__custom-tip {
+            background: $very-light-grayish-cyan;
+            border: none;
+            text-align: end;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 0 15px;
+            color: $very-dark-cyan;
+            border-radius: 5px;
+            border: 2px solid transparent;
+
+            @at-root .input__custom-tip:hover {
+              cursor: pointer;
+              border: 2px solid $strong-cyan;
+            }
+
+            @at-root .input__custom-tip:focus {
+              outline: none;
+              border: 2px solid $strong-cyan;
+            }
+
+            @at-root .input__custom-tip::placeholder {
+              color: $dark-grayish-cyan;
+            }
+          }
+        }
+      }
+    }
+
+    @at-root .result {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      background: $very-dark-cyan;
+      padding: 45px 25px 25px 25px;
+      border-radius: 15px;
+
+      @at-root .result__amount-cont {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @at-root .result__title {
+          font-size: 1rem;
+          color: $very-light-grayish-cyan;
+          line-height: 1.2;
+
+          @at-root .result__sub-title {
+            font-size: 0.9rem;
+            color: $grayish-cyan;
+          }
+        }
+
+        @at-root .result__amount {
+          font-size: 2rem;
+          font-weight: 700;
+          color: $strong-cyan;
+        }
+      }
+
+      @at-root .result__reset {
+        background: $strong-cyan;
+        border: none;
+        font-size: 1.3rem;
+        font-family: "Space Mono", monospace;
+        color: $very-dark-cyan;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 10px;
+        border-radius: 5px;
+
+        @at-root .result__reset:hover {
+          background: lighten($color: $strong-cyan, $amount: 30%);
+          color: $very-dark-cyan;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @at-root .attribution {
+    color: $very-dark-cyan;
+    margin: 10px 0;
+
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    @at-root .card {
+      flex-direction: row;
+      width: 800px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+
+      @at-root .input {
+        padding: 10px;
+        flex-basis: 50%;
+        width: 100%;
+        gap: 10%;
+
+        @at-root .input__cont {
+          @at-root .input__radio {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+
+            @at-root .input__custom-tip {
+              width: 100%;
+              text-align: end;
+              padding: 10px;
+              box-sizing: border-box;
+
+              @at-root .input__custom-tip::placeholder {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      @at-root .result {
+        flex-basis: 50%;
+        width: 100%;
+        padding: 50px 30px 30px 30px;
+        box-sizing: border-box;
+
+        @at-root .result__amount-cont {
+          @at-root .result__amount-cont_flex-grow {
+            flex-grow: 1;
+            align-items: start;
+          }
+
+          @at-root .result__amount {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    @at-root .card {
+      width: 900px;
+      height: 450px;
+      box-sizing: border-box;
+
+      @at-root .input {
+        gap: 0;
+        justify-content: space-between;
+
+        @at-root .input__cont {
+          @at-root .input__field {
+          }
+        }
+
+        @at-root .input__radio {
+          @at-root .input__radio-label {
+            height: 50px;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          @at-root .input__custom-tip {
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}

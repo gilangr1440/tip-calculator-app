@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="styles/CSS/css-reset.css" />
+    <link rel="stylesheet" href="styles/CSS/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">
+        <span>S</span>
+        <span>P</span>
+        <span>L</span>
+        <span>I</span>
+        <span>T</span>
+        <span>T</span>
+        <span>E</span>
+        <span>R</span>
+      </h1>
+    </header>
+
+    <main class="card">
+      <section class="input">
+        <div class="input__cont">
+          <div class="input__error-cont">
+            <label for="bill" class="input__label">Bill</label>
+            <p class="input__error-text" id="billErrorText">Can't be zero</p>
+          </div>
+          <div class="input__field" id="billErrorCont">
+            <img src="images/icon-dollar.svg" alt="dollar" class="input__icon" />
+            <input type="number" class="input__value" id="bill" name="bill" placeholder="0" />
+          </div>
+        </div>
+
+        <div class="input__cont">
+          <label for="tip" class="input__label">Select Tip %</label>
+          <div class="input__radio">
+            <label for="five" class="input__radio-label">5%</label>
+            <input class="input__radio-button" type="radio" name="tip" id="five" value="5" />
+            <label for="ten" class="input__radio-label">10%</label>
+            <input class="input__radio-button" type="radio" name="tip" id="ten" value="10" />
+            <label for="fifteen" class="input__radio-label">15%</label>
+            <input class="input__radio-button" type="radio" name="tip" id="fifteen" value="15" />
+            <label for="twentyfive" class="input__radio-label">25%</label>
+            <input class="input__radio-button" type="radio" name="tip" id="twentyfive" value="25" />
+            <label for="fifty" class="input__radio-label">50%</label>
+            <input class="input__radio-button" type="radio" name="tip" id="fifty" value="50" />
+            <input type="text" name="custom" id="custom" placeholder="Custom" class="input__custom-tip" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="input__cont">
+          <div class="input__error-cont">
+            <label for="people" class="input__label">Number of People</label>
+            <p class="input__error-text" id="peopleErrorText">Can't be zero</p>
+          </div>
+          <div class="input__field" id="peopleErrorCont">
+            <img src="images/icon-person.svg" alt="person" class="input__icon" />
+            <input type="number" class="input__value" id="people" name="people" placeholder="0" />
+          </div>
+        </div>
+      </section>
+
+      <section class="result">
+        <div class="result__amount-cont">
+          <h2 class="result__title">
+            Tip Amount <br />
+            <span class="result__sub-title">/ person</span>
+          </h2>
+          <p class="result__amount" id="tipAmount">$0.00</p>
+        </div>
+        <div class="result__amount-cont result__amount-cont_flex-grow">
+          <h2 class="result__title">
+            Total <br />
+            <span class="result__sub-title">/ person</span>
+          </h2>
+          <p class="result__amount" id="totalAmount">$0.00</p>
+        </div>
+        <button class="result__reset">Reset</button>
+      </section>
+    </main>
+
+    <footer class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.linkedin.com/in/gilangr1440/">Gilang Ramadhan</a>.</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
