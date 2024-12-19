@@ -243,6 +243,10 @@ body {
 
 @media only screen and (min-width: 1024px) {
   body {
+    @at-root .header {
+      height: 200px;
+    }
+
     @at-root .card {
       flex-direction: row;
       width: 800px;
@@ -298,6 +302,8 @@ body {
 
 @media only screen and (min-width: 1024px) {
   body {
+    padding: 50px 0 150px;
+
     @at-root .card {
       width: 900px;
       height: 450px;
@@ -306,11 +312,6 @@ body {
       @at-root .input {
         gap: 0;
         justify-content: space-between;
-
-        @at-root .input__cont {
-          @at-root .input__field {
-          }
-        }
 
         @at-root .input__radio {
           @at-root .input__radio-label {

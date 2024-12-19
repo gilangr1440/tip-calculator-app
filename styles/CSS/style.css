@@ -225,6 +225,9 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
+  .header {
+    height: 200px;
+  }
   .card {
     flex-direction: row;
     width: 800px;
@@ -269,6 +272,9 @@ body {
   }
 }
 @media only screen and (min-width: 1024px) {
+  body {
+    padding: 50px 0 150px;
+  }
   .card {
     width: 900px;
     height: 450px;
